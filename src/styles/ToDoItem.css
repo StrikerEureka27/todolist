@@ -1,0 +1,45 @@
+.checkbox {
+  margin-right: 1rem;
+  width: 1rem;
+}
+
+.container-item {
+  margin-top: 0.5rem;
+  padding: 1rem;
+  width: 25rem;
+  list-style: none;
+  text-decoration: none;
+  background-color: #f95959;
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.item{
+  flex-grow: 2;
+}
+
+.item-done {
+  background-color: #e05050;
+  text-decoration: line-through;
+}
+
+.btn-delete{
+  color: white;
+  background-color: #233142; 
+  border-radius: 100px;
+}
+
+.no-display{
+  display: none;
+}
+
+input::placeholder {
+  color: white;
+}
+
+input:focus {
+  outline: none;
+}

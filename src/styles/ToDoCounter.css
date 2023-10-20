@@ -1,0 +1,15 @@
+
+.title {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.subtitle {
+ margin-top: 0;
+ color: lightgray;
+}
+
+strong {
+    color: white;
+    font-weight: bolder;
+}

@@ -1,0 +1,13 @@
+
+.search {
+    margin: 0;
+    padding: 0.5rem;
+    height: 2.5rem;
+    border: none;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    background-color: #455d7a;
+    display: block;
+};
+
