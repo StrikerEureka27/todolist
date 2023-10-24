@@ -1,0 +1,41 @@
+
+
+.modal-header{
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+
+.modal-header-title{
+    margin-left: 1rem;
+    flex-grow: 2;
+}
+
+.modal-header-btn{
+    color: white;
+    background-color: #f95959;
+    font-weight: bolder;
+    border: none;
+    margin-right: 1rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+.modal-clean-btn{
+    width: 100%;
+    display: block;
+}
+
+.modal-window{
+    height: auto;
+    width: 35rem;
+    color: white;
+    background-color: #233142;
+    position: absolute;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    display: flex;
+}

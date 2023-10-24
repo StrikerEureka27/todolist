@@ -1,23 +1,41 @@
-import React from 'react';
+import React from "react";
 
 // Custom hooks
-function useLocalStorage(localStorageValue) {
-    let parsedItemList = [];
-    const defaultToDoList = localStorage.getItem("TODO_V1");
-  
-    if (defaultToDoList != null) {
-      parsedItemList = JSON.parse(defaultToDoList);
-    } else {
-      parsedItemList = [{ text: "Welcome to the TodoList", complete: false }];
-    }
-  
-    const updateLocalStorage = (mutatedItemsList) => {
-      localStorage.setItem(localStorageValue, JSON.stringify(mutatedItemsList));
-    };
-  
-    const [itemList, setItemList] = React.useState(parsedItemList);
-    return { itemList, setItemList, updateLocalStorage };
+function useLocalStorage(localStorageValue, initialValue ) {
+
+  const [itemList, setItemList] = React.useState(initialValue);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [error, setError] = React.useState(false);
+
+  React.useEffect(() => {
+
+    setTimeout(() => {
+      let parsedItemList = [];
+      const defaultToDoList = localStorage.getItem(localStorageValue);
+
+      try {
+        if (defaultToDoList != null) {
+          parsedItemList = JSON.parse(defaultToDoList);
+          setItemList(parsedItemList);
+        }
+      } catch (error) {
+        setError(true);
+      }
+
+      setIsLoading(false);
+    }, 1500);
+  },[]);
+
+  const updateLocalStorage = (mutatedItemsList) => {
+    localStorage.setItem(localStorageValue, JSON.stringify(mutatedItemsList));
+  };
+
+  const deleteLocalStorage = () =>{
+    localStorage.clear();
+    setItemList(null);
   }
 
+  return { itemList, isLoading, error, setItemList, updateLocalStorage, deleteLocalStorage };
+}
 
-  export { useLocalStorage };
+export { useLocalStorage };
