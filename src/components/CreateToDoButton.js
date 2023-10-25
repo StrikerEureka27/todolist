@@ -9,9 +9,11 @@ function CreateToDoButton() {
   const { onCreate } = React.useContext(TodoContext);
 
   return (
-    <button className="btn" onClick={onCreate}>
+    <div className="btn-item" >
+      <button className="btn" onClick={onCreate}>
       Create <AiOutlinePlus />
     </button>
+    </div>
   );
 };
 

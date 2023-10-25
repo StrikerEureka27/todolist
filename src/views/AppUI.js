@@ -7,6 +7,8 @@ import { CreateToDoButton } from "../components/CreateToDoButton";
 import { IsLoading } from "../components/IsLoading";
 import { TodoContext } from "../ToDoContext.js";
 import { Modal } from "../components/Modal.js";
+import { ToDoTitle } from "../components/ToDoTitle.js";
+import { OptionsTodoButton } from "../components/OptionsToDoButton.js";
 
 function AppUI() {
 
@@ -14,8 +16,9 @@ function AppUI() {
 
   return (
     <section className="container">
-      <ToDoCounter />
+      <ToDoTitle />
       <ToDoSearch />
+      <ToDoCounter />
       <TodoContext.Consumer>
         {({ todoList, filterTask, onComplete, onDelete, isLoading, error }) => (
           <React.Fragment>
@@ -39,6 +42,7 @@ function AppUI() {
         )}
       </TodoContext.Consumer>
       <CreateToDoButton />
+      <OptionsTodoButton />
       {
           showModal && <Modal></Modal>
       }

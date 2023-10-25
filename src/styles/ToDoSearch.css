@@ -1,14 +1,30 @@
 
-.search {
-    margin: 0;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    height: 2.5rem;
-    border: none;
+.search-item{
     width: 100%;
+    background-color: var(--black);
+}
+
+
+.search {
+    width: 100%;
+    height: 5rem;
+    margin: 0;
+    font-size: medium;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    color: var(--secondary);
+    border: none;
+    border-radius: 10px;
+    background-color: var(--dark-gray);
     box-sizing: border-box;
-    color: white;
-    background-color: #455d7a;
-    display: block;
-};
+}
+
+.search:focus{
+    border: 1px solid var(--secondary-dark);
+}
+
+.search::placeholder{
+    font-size: medium;
+    color: var(--secondary-dark);
+}
 

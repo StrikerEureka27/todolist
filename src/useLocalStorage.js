@@ -1,17 +1,15 @@
 import React from "react";
 
 // Custom hooks
-function useLocalStorage(localStorageValue, initialValue ) {
-
+function useLocalStorage(localStorageValue, initialValue) {
   const [itemList, setItemList] = React.useState(initialValue);
   const [isLoading, setIsLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
-
+  
   React.useEffect(() => {
-
     setTimeout(() => {
-      let parsedItemList = [];
       const defaultToDoList = localStorage.getItem(localStorageValue);
+      let parsedItemList = [];
 
       try {
         if (defaultToDoList != null) {
@@ -24,18 +22,25 @@ function useLocalStorage(localStorageValue, initialValue ) {
 
       setIsLoading(false);
     }, 1500);
-  },[]);
+  }, [localStorageValue]);
 
   const updateLocalStorage = (mutatedItemsList) => {
     localStorage.setItem(localStorageValue, JSON.stringify(mutatedItemsList));
   };
 
-  const deleteLocalStorage = () =>{
+  const deleteLocalStorage = () => {
     localStorage.clear();
-    setItemList(null);
-  }
+    setItemList([]);
+  };
 
-  return { itemList, isLoading, error, setItemList, updateLocalStorage, deleteLocalStorage };
+  return {
+    itemList,
+    isLoading,
+    error,
+    setItemList,
+    updateLocalStorage,
+    deleteLocalStorage,
+  };
 }
 
 export { useLocalStorage };

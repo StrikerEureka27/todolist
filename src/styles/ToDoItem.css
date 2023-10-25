@@ -4,42 +4,51 @@
 }
 
 .container-item {
+  color: white;
   margin-top: 0.5rem;
+  width: 80%;
   padding: 1rem;
-  width: 25rem;
   list-style: none;
   text-decoration: none;
-  background-color: #f95959;
+  background-color: var(--black);
   flex-direction: row;
   justify-content: space-between;
   display: flex;
   outline: none;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   box-sizing: border-box;
 }
 
-.item{
+.container-item:hover {
+  background-color: var(--secondary-dark);
+}
+
+.item {
   flex-grow: 2;
 }
 
 .item-done {
-  background-color: #e05050;
+  background-color: var(--secondary-dark);
   text-decoration: line-through;
 }
 
-.btn-delete{
+.btn-delete {
   color: white;
-  background-color: #233142; 
-  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: transparent;
 }
 
-.no-display{
+.btn-delete:hover{
+  background-color: var(--black);
+}
+
+.no-display {
   display: none;
 }
 
-input::placeholder {
-  color: white;
-}
-
 input:focus {
-  outline: none;
-}
+  outline: none;  
+} 

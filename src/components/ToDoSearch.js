@@ -8,7 +8,8 @@ function ToDoSearch() {
   } = React.useContext(TodoContext);
 
   return (
-    <input
+    <div className="search-item">
+      <input
       className="search"
       placeholder="Filter or create a task..."
       value={searchValue}
@@ -16,6 +17,7 @@ function ToDoSearch() {
         setSearchValue(event.target.value);
       }}
     />
+    </div>
   );
 }
 

@@ -8,8 +8,8 @@ function IsLoading({ isLoading, error, todoList }) {
         <MutatingDots
           height="100"
           width="100"
-          color="#455d7a"
-          secondaryColor="#f95959"
+          color="#acf3b5"
+          secondaryColor="#6ca376"
           radius="12.5"
           ariaLabel="mutating-dots-loading"
           wrapperStyle={{}}

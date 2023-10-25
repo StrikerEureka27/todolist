@@ -37,6 +37,12 @@ function TodoProvider({ children }) {
     setTodoList(mutateTodoList);
   };
 
+  const onClean = () =>{
+    let mutatedItemsList = [...todoList];
+    mutatedItemsList = [];
+    setTodoList(mutatedItemsList);
+  }
+
   const onDelete = (text) => {
     let mutatedTodoList = [...todoList];
     todoList.find((task, taskIndex) => {
@@ -75,6 +81,7 @@ function TodoProvider({ children }) {
         isLoading,
         error,
         showModal, 
+        onClean,
         setSearchValue,
         onCreate,
         onComplete,

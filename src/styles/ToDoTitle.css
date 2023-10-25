@@ -1,0 +1,11 @@
+
+.title-item {
+    width: 100%;
+    justify-content: center;
+    background-color: var(--black);
+    display: flex;
+}
+
+.title {
+    color: var(--light-gray);
+}
